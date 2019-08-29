@@ -48,11 +48,14 @@ an index on the token_address column would have increased the speed of queries d
 I would create a front end using React which would have an interface where you could interact with the graphql server queries. 
 I would host the web app on GCP or AWS. I would also host the backend graphql server on GCP or AWS (I hosted it on heroku for simplicity,
 GCP or AWS is better for production because they are more powerful/customizable).
-
+As far as the data storage I would use the same stack/tools but allow for dynamic downloading of all the contents of the bucket based
+on input. Potentially could include the `gsutil cp` command in the bash script. 
 
 ## 5- How would you deploy this app? What would be the CI workflow?
 
-I would deploy the app on GCP or AWS so the graphql server would be available for use. 
+For the data storage I would use the bash script to download the contents of the bucket and then perform the psql copy on each of them.
+This would be done on the cloud server that we deploy the app to. 
+I would deploy the server on GCP or AWS so the graphql server would be available for use. 
 As far as the CI workflow I would create 3 different environements: Development, Staging, and Production. New features would be 
 done in development and once completed I would run a set of test cases against it before allowing for merge into staging. Once the 
 tests pass the development branch would merge into staging. In this branch we would make a final pass through with testing and make
