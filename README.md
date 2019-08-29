@@ -72,15 +72,15 @@ RAM of the computer.
 
 ## 3- Performance metrics
 
-The bash script that copied the token-transfer data into the postgres instance took a total of <b>7629 seconds<b> which is 
-2 Hours, 7 Mins, and 8 Seconds. 
+The bash script that copied the token-transfer data into the postgres instance took a total of <b>7629 seconds</b> which is 
+<b>2 Hours, 7 Mins, and 8 Seconds</b>. 
 
-Rows of data in token_transfer table: 219,222,954
+Rows of data in token_transfer table: <b>219,222,954</b>
 
-The bash script that copied the token data into the postgres instance took 3 seconds, I just used the `time` command for this
+The bash script that copied the token data into the postgres instance took <b>3 seconds</b>, I just used the `time` command for this
 because it was only one file.
 
-Rows of data in token table: 144716
+Rows of data in token table: <b>144716</b>
 
 The graphql queries were paginated so the response time was very quick, a query that had to go through the whole token_transfer db
 took too long to execute. I was unable to create an index on the table because of a lack of space on the google cloud instance. Adding
