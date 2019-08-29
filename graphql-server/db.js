@@ -1,6 +1,7 @@
 const { Pool } = require('pg');
 
-//Should Use Environment variables for production application
+// Should Use Environment variables for production application
+// Google Cloud Postgres Instance configuration
 const config = {
     host: '104.196.69.54',
     user: 'naveen',
