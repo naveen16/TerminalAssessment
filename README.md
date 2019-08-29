@@ -31,7 +31,9 @@ RAM of the computer.
 
 The bash script that copied the data token-transfer data into the postgres instance took a total of 7629 seconds which is 
 2 Hours, 7 Mins, and 8 Seconds. 
+
 Rows of data in token_transfer table: 219,222,954
+
 Rows of data in token table: 144716
 
 The graphql queries were paginated so the response time was very quick, a query that had to go through the whole token_transfer db
