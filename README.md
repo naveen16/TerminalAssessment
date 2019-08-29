@@ -6,6 +6,7 @@ I hosted the server on heroku it can be tested at the following link:
 <a href="https://terminal-tokens.herokuapp.com/api" target="_blank">https://terminal-tokens.herokuapp.com/api</a> 
 
 Also if you want to view the google cloud postgres instance you can run the following command to open up the psql shell on your machine:
+
 `psql "sslmode=disable dbname=terminal user=naveen password=postgres hostaddr=104.196.69.54"`
 
 ## 1- Rationale behind the tools/languages you chose for the assignment
