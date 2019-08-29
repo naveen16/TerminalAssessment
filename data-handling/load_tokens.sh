@@ -1,3 +1,7 @@
+# Loads all files from tokens directory into postgres using the 'Copy' statement.
+# Connects to the google cloud postgres instance and stores the data there. 
+# The files from the google cloud bucket were copied to my local file system before being stored in DB.
+
 # get filenames
 IMPFILES=(tokens/*.csv)
 
