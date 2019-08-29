@@ -48,6 +48,7 @@ an index on the token_address column would have increased the speed of queries d
 I would create a front end using React which would have an interface where you could interact with the graphql server queries. 
 I would host the web app on GCP or AWS. I would also host the backend graphql server on GCP or AWS (I hosted it on heroku for simplicity,
 GCP or AWS is better for production because they are more powerful/customizable).
+
 As far as the data storage I would use the same stack/tools but allow for dynamic downloading of all the contents of the bucket based
 on input. Potentially could include the `gsutil cp` command in the bash script. 
 
