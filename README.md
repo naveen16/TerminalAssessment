@@ -5,6 +5,37 @@ Comments:
 I hosted the server on heroku it can be tested at the following link:
 <a href="https://terminal-tokens.herokuapp.com/api" target="_blank">https://terminal-tokens.herokuapp.com/api</a> 
 
+Here are a couple example queries:
+
+Get all tokens, return the first 10 with offset 0:
+```
+{
+  tokens(first: 10, offset:0){
+    address,
+    symbol,
+    name,
+    total_supply,
+  }
+}
+```
+
+Get all token transfers, return the first 10 with offset 10:
+```
+{
+  token_transfers(first:10, offset: 10){
+    token_address,
+    from_address,
+    to_address,
+    token{
+      symbol,
+      name
+    }
+  }
+}
+```
+
+Other queries are listed in the documentation on the right side of the link.
+
 Also if you want to view the google cloud postgres instance you can run the following command to open up the psql shell on your machine:
 
 `psql "sslmode=disable dbname=terminal user=naveen password=postgres hostaddr=104.196.69.54"`
