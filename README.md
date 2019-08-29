@@ -5,7 +5,8 @@
 ### Data Handling
 
 To handle the data from the google cloud bucket I used a bash script that invoked the PSQL Command `COPY <table_name> FROM <file>`.
-This takes a CSV file and stores its contents in the Postgres Database Instance. 
+This takes a CSV file and stores its contents in the Postgres Database Instance. I copied the contents of the google cloud bucket
+to my local computer using the `gsutil cp -r gs://my-bucket dir` command.
 Since the data was so large I decided to create a Google Cloud Postgres Instance to use as the storage. For the Copy command to work
 I needed to create the Database and Tables in the format of the csv files before invoking the command. 
 
