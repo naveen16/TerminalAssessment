@@ -80,7 +80,7 @@ Rows of data in token_transfer table: <b>219,222,954</b>
 The bash script that copied the token data into the postgres instance took <b>3 seconds</b>, I just used the `time` command for this
 because it was only one file.
 
-Rows of data in token table: <b>144716</b>
+Rows of data in token table: <b>144,716</b>
 
 The graphql queries were paginated so the response time was very quick, a query that had to go through the whole token_transfer db
 took too long to execute. I was unable to create an index on the table because of a lack of space on the google cloud instance. Adding
