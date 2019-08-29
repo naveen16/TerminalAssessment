@@ -1,0 +1,1 @@
+web: node ./graphql-server/index.js
