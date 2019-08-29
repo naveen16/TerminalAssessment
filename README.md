@@ -5,7 +5,8 @@
 ### Data Handling
 
 To handle the data from the google cloud bucket I used a bash script that invoked the PSQL Command `COPY <table_name> FROM <file>`.
-This takes a CSV file and stores its contents in the Postgres Database Instance. 
+This takes a CSV file and stores its contents in the Postgres Database Instance. I copied the contents of the google cloud bucket
+to my local computer using the `gsutil cp -r gs://my-bucket dir` command.
 Since the data was so large I decided to create a Google Cloud Postgres Instance to use as the storage. For the Copy command to work
 I needed to create the Database and Tables in the format of the csv files before invoking the command. 
 
@@ -19,12 +20,14 @@ the performance of the PSQL outweighs it.
 
 ### GraphQL server
 
-I used Node.js and Express to create the graphql server. For communicating with the database I used the NPM module `pg`. 
+I used Node.js and Express to create the graphql server. For communicating with the database I used the NPM module `pg`.
+
+I hosted the server on Heroku: <a href="https://terminal-tokens.herokuapp.com/api" target="_blank">https://terminal-tokens.herokuapp.com/api</a> 
 
 ## 2- Any considerations you had for CPU, memory or storage
 
 The size of the data was very large(~70GB total data) so I had to create a google cloud instance of postgres to store the data. 
-As far as memory, in the python approach I used the `dask` libray over pandas because of its ability to hold data larger than the 
+As far as memory, in the python approach I used the `dask` library over pandas because of its ability to hold data larger than the 
 RAM of the computer.
 
 ## 3- Performance metrics
@@ -42,4 +45,22 @@ an index on the token_address column would have increased the speed of queries d
 
 ## 4- If you had to offer the service as a production application, what stack/tools would you use.
 
+I would create a front end using React which would have an interface where you could interact with the graphql server queries. 
+I would host the web app on GCP or AWS. I would also host the backend graphql server on GCP or AWS (I hosted it on heroku for simplicity,
+GCP or AWS is better for production because they are more powerful/customizable).
+
+As far as the data storage I would use the same stack/tools but allow for dynamic downloading of all the contents of the bucket based
+on input. Potentially could include the `gsutil cp` command in the bash script. 
+
 ## 5- How would you deploy this app? What would be the CI workflow?
+
+For the data storage I would use the bash script to download the contents of the bucket and then perform the psql copy on each of them.
+This would be done on the cloud server that we deploy the app to. 
+
+I would deploy the server on GCP or AWS so the graphql server would be available for use. 
+As far as the CI workflow I would create 3 different environements: Development, Staging, and Production. New features would be 
+done in development and once completed I would run a set of test cases against it before allowing for merge into staging. Once the 
+tests pass the development branch would merge into staging. In this branch we would make a final pass through with testing and make
+sure it passes the test cases before being merged into production. Once in production it would go live on the server. 
+We could use a service like CircleCI to streamline this process. 
+
