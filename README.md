@@ -72,10 +72,13 @@ RAM of the computer.
 
 ## 3- Performance metrics
 
-The bash script that copied the data token-transfer data into the postgres instance took a total of 7629 seconds which is 
+The bash script that copied the token-transfer data into the postgres instance took a total of 7629 seconds which is 
 2 Hours, 7 Mins, and 8 Seconds. 
 
 Rows of data in token_transfer table: 219,222,954
+
+The bash script that copied the token data into the postgres instance took 3 seconds, I just used the `time` command for this
+because it was only one file.
 
 Rows of data in token table: 144716
 
