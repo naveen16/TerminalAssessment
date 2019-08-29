@@ -21,7 +21,7 @@ the performance of the PSQL outweighs it.
 
 I used Node.js and Express to create the graphql server. For communicating with the database I used the NPM module `pg`.
 
-I hosted the server on Heroku: https://terminal-tokens.herokuapp.com/api
+I hosted the server on Heroku: <a href="https://terminal-tokens.herokuapp.com/api" target="_blank">https://terminal-tokens.herokuapp.com/api</a> 
 
 ## 2- Any considerations you had for CPU, memory or storage
 
