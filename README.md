@@ -55,6 +55,7 @@ on input. Potentially could include the `gsutil cp` command in the bash script.
 
 For the data storage I would use the bash script to download the contents of the bucket and then perform the psql copy on each of them.
 This would be done on the cloud server that we deploy the app to. 
+
 I would deploy the server on GCP or AWS so the graphql server would be available for use. 
 As far as the CI workflow I would create 3 different environements: Development, Staging, and Production. New features would be 
 done in development and once completed I would run a set of test cases against it before allowing for merge into staging. Once the 
