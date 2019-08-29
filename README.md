@@ -27,7 +27,7 @@ I hosted the server on Heroku: <a href="https://terminal-tokens.herokuapp.com/ap
 ## 2- Any considerations you had for CPU, memory or storage
 
 The size of the data was very large(~70GB total data) so I had to create a google cloud instance of postgres to store the data. 
-As far as memory, in the python approach I used the `dask` libray over pandas because of its ability to hold data larger than the 
+As far as memory, in the python approach I used the `dask` library over pandas because of its ability to hold data larger than the 
 RAM of the computer.
 
 ## 3- Performance metrics
